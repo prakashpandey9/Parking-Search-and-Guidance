@@ -3,10 +3,10 @@ import math
 import numpy as np
 from matplotlib import pyplot as plt
 
-img1 = cv.imread('C:\Users\Sunny Singh\Pictures\parkingfull.jpg')
+img1 = cv2.imread('new_fill.jpg')
 img3 = cv.cvtColor(img1, cv.COLOR_BGR2GRAY)
 
-img2 = cv.imread('C:\Users\Sunny Singh\Pictures\parkingfill.jpg')
+img2 = cv2.imread('new_parking.jpg')
 img4 = cv.cvtColor(img2, cv.COLOR_BGR2GRAY)
 
 img_subtract = img3 - img4
@@ -23,9 +23,9 @@ images = [img8, thresh1]
 img6 = cv.cvtColor(thresh1, cv.COLOR_BGR2GRAY)
 
 #for i in xrange(2):
-    plt.subplot(2,3,i+1),plt.imshow(images[i],'gray')
-    plt.title(titles[i])
-    plt.xticks([]),plt.yticks([])
+#    plt.subplot(2,3,i+1),plt.imshow(images[i],'gray')
+#    plt.title(titles[i])
+#    plt.xticks([]),plt.yticks([])
 	
 contours, hierarchy = cv.findContours(img6,cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 #print contours
